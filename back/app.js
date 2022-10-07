@@ -2,10 +2,8 @@ const path = require('path');
 const helmet = require('helmet')
 const mongoSanitize = require('express-mongo-sanitize');
 const express = require('express');
-const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 require('dotenv').config();
-
 const sauceRoutes = require('./routes/sauceRoute');
 const userRoutes = require('./routes/userRoute');
 
@@ -30,7 +28,7 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
-app.use(helmet());
+app.use(helmet.xssFilter());
 
 //sanitize pour éviter les attaques XSS
 app.use(

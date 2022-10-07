@@ -6,7 +6,6 @@ const multer = require('../middleware/multer-config');
 
 //importation du like
 const like = require("../controllers/like");
-
 const sauceCtrl = require('../controllers/sauceController');
 
 router.get('/', auth, sauceCtrl.getAllSauce);
