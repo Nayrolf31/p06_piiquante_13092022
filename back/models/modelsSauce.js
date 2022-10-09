@@ -10,8 +10,8 @@ const sauceSchema = mongoose.Schema({
   heat: { type: Number, required: true },
 
   //système de like et dislike
-  likes: { type: Number, defaut: 0 },
-  dislikes: { type: Number, defaut: 0 },
+  likes: { type: Number, default: 0 },
+  dislikes: { type: Number, default: 0 },
   usersLiked: { type: [String] },
   usersDisliked: { type: [String] },
 });
